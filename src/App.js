@@ -1,18 +1,16 @@
-import Board from "./components/Board";
-import Toolbar from "./components/Toolbar";
-import Toolbox from "./components/Toolbox";
-import BoardProvider from "./store/BoardProvider";
-import ToolboxProvider from "./store/ToolboxProvider";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";  
+import Profile from "./pages/Profile"; 
+
 
 function App() {
   return (
-    <BoardProvider>
-      <ToolboxProvider>
-        <Toolbar />
-        <Board />
-        <Toolbox />
-      </ToolboxProvider>
-    </BoardProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </Router>
   );
 }
 
